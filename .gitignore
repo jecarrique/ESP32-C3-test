@@ -1,0 +1,22 @@
+# Rust build artifacts
+target/
+
+# ESP-IDF native build directory (created by embuild)
+.embuild/
+
+# Generated SDK config (created during build, not tracked)
+sdkconfig
+
+# Binary artifacts
+*.bin
+*.elf
+*.map
+
+# Build logs
+*.log
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
