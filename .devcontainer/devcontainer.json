@@ -1,0 +1,39 @@
+{
+  "name": "ESP32-C3 Rust Dev Container",
+  "image": "docker.io/espressif/idf-rust:esp32c3_latest",
+  "runArgs": [
+    "--privileged",
+    "--mount",
+    "type=bind,source=/run/udev,target=/run/udev,readonly"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "files.watcherExclude": {
+          "**/target/**": true
+        },
+        "rust-analyzer.cargo.targetDir": "target",
+        "rust-analyzer.checkOnSave.command": "clippy",
+        "rust-analyzer.checkOnSave.allTargets": false,
+        "[rust]": {
+          "editor.defaultFormatter": "rust-lang.rust-analyzer"
+        }
+      },
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "serayuzgur.crates",
+        "mutantdino.resourcemonitor",
+        "ms-vscode.cpptools",
+        "vadimcn.vscode-lldb"
+      ]
+    }
+  },
+  "forwardPorts": [
+    3333,
+    8000
+  ],
+  "remoteUser": "esp",
+  "postCreateCommand": "rustc --version && cargo --version"
+}
