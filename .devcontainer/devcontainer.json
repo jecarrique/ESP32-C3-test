@@ -1,16 +1,17 @@
 {
   "name": "ESP32-C3 Rust Environment",
-  "image": "ghcr.io/esp-rs/espressif-trainings:latest",
+  "image": "espressif/idf-rust:esp32c3_latest",
   "customizations": {
     "vscode": {
       "extensions": [
         "rust-lang.rust-analyzer",
         "wokwi.wokwi-vscode",
         "mutsebastian.gdb-headless"
-      ]
+      ],
+      "settings": {
+        "rust-analyzer.cargo.target": "riscv32imc-unknown-none-elf"
+      }
     }
   },
-  "settings": {
-    "rust-analyzer.cargo.target": "riscv32imc-unknown-none-elf"
-  }
+  "remoteUser": "esp"
 }
